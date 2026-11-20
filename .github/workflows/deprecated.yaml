@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Istallation Script
-        run: ./scripts/deb/setup_${{ matrix.version }}.x
+        run: ./scripts/deb/deprecated/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
         run: |
@@ -65,7 +65,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Istallation Script
-        run: ./scripts/rpm/setup_${{ matrix.version }}.x
+        run: ./scripts/rpm/deprecated/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
         run: |
