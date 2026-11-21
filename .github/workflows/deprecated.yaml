@@ -32,6 +32,7 @@ jobs:
 
       - name: Install Nodejs
         run: |
+          apt-get update -y
           apt-get install nodejs -y
 
       - name: Validate Node Version
@@ -69,6 +70,7 @@ jobs:
 
       - name: Install Nodejs
         run: |
+          yum update -y
           yum install nodejs -y
 
       - name: Validate Node Version
