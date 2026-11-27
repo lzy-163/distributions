@@ -27,6 +27,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Configure archived Debian repositories
+        if: matrix.os == 'debian:10'
+        run: |
+          sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list
+          echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive
+
       - name: Run Istallation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
 
